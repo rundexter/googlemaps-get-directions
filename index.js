@@ -51,7 +51,7 @@ module.exports = {
     run: function(step, dexter) {
         var auth = this.authOptions(step, dexter);
         if (!auth)
-            return this.fail('A [google_server_key] or [google_client_id,google_private_key] environment variable need for this module.');
+            return this.fail('A [google_server_key] (or [google_client_id,google_private_key] for enterprise) environment variable need for this module.');
 
         var gmAPI = new GoogleMapsAPI(auth);
         gmAPI.directions(util.pickInputs(step, pickInputs), function(err, result){
